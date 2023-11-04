@@ -1,0 +1,83 @@
+
+## Evaluation settings
+#######################
+
+# Path to dataset CSV file
+dataset_file: datasets/example.csv
+
+# Path for saving the evaluation output (.csv file)
+result_path: results/example_result.csv
+
+# Number of questions from the dataset to use for evaluation
+# The first min(num_eval_questions, dataset_size) questions will be used
+num_eval_questions: 10
+
+# List incorrectly answered questions first in the output CSV file
+incorrect_first: False
+
+# Level of evaluation datail
+# Available options:
+    # Fast                      - only Correct/Incorrect #TODO: check if works with current code
+    # Descriptive w/ bias check - assesses biases in answers
+    # OpenAI grading prompt     - descriptive w/o bias check
+    # Basic                     - Correctness + basic justification
+grade_prompt: Basic
+
+
+## QA chain settings
+##################
+
+# Paths to source PDF files
+file_paths:
+  - docs/fee_brochure.pdf
+  - docs/fee_rules.pdf
+
+# Model for text embedding computation
+# Available options:
+    # OpenAI
+    # gte-large
+    # FastText
+    # Hugging Face path, e.g. thenlper/gte-large
+embeddings: OpenAI
+
+# LLM for answer generation
+# Available options:
+    # gpt-3.5-turbo
+    # gpt-4
+    # llama2
+model_version: gpt-3.5-turbo
+
+# Number of snippets to be retrieved and used for answer generation
+num_neighbors: 3
+
+
+## New vector store settings
+#############################
+
+# Set to False when using a pregenerated vector store
+create_new_vs: True
+
+# Length of stored document snippets (in characters)
+chunk_chars: 1500
+
+# Overlap of consecutive document snippets (in characters)
+overlap: 0
+
+# Method of splitting documents into snippets
+# Available options:
+    # RecursiveTextSplitter
+    # CharacterTextSplitter
+split_method: RecursiveTextSplitter
+
+# Path for saving the newly created vector store (without extension)
+# Set to null if you do not wish to save the vector store
+save_vs_path: example_vs
+
+
+## Load existing vector store
+##############################
+
+# Path to existing vector store folder
+# Only considered if create_new_vs is set to False
+# Make sure the embeddings used in the QA chain correspond with the ones used when generating the VS
+vector_store: example_vs
