@@ -25,7 +25,7 @@ grade_prompt: Basic
 
 
 ## QA chain settings
-##################
+####################
 
 # Paths to source PDF files
 file_paths:
