@@ -19,6 +19,8 @@ Generate datasets:
     python3 cli_create_dataset.py --help
     python3 cli_create_dataset.py docs/fee_brochure.pdf docs/fee_rules.pdf [docs/file3.pdf ...] -n 10 -o datasets/example.csv
 
+Optionally, adjust the custom task definition for the generation prompts inside text_utils.py to improve the relevance of generated questions.
+
 Adjust evaluation settings in eval_config.yml. Create more versions of the file if needed.
 
 Run evaluation:
@@ -26,4 +28,4 @@ Run evaluation:
     python3 cli_evaluate.py --help
     python3 cli_evaluate.py [-c path_to_custom_config.yml]
 
-Use Interactive_eval.ipynb or Standalone_interactive.ipynb to interactively create datasets and run evaluations.
+Use Interactive_eval.ipynb or Standalone_interactive.ipynb for better control over code execution.
