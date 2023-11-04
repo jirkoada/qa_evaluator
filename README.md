@@ -5,7 +5,7 @@ Based on https://github.com/langchain-ai/auto-evaluator
 ## Usage
 Clone this repo:
 
-    git clone https://gitlab.com/alquist/ciirc-projects/porsche/qa_eval.git
+    git clone https://github.com/jirkoada/qa_evaluator.git
 
 Install required packages:
 
