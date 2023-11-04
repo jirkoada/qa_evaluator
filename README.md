@@ -15,12 +15,14 @@ Install required packages:
     pip install -r requirements.txt
 
 Generate datasets:
+
     python3 cli_create_dataset.py --help
     python3 cli_create_dataset.py docs/fee_brochure.pdf docs/fee_rules.pdf [docs/file3.pdf ...] -n 10 -o datasets/example.csv
 
 Adjust evaluation settings in eval_config.yml. Create more versions of the file if needed.
 
 Run evaluation:
+
     python3 cli_evaluate.py --help
     python3 cli_evaluate.py [-c path_to_custom_config.yml]
 
