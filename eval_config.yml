@@ -17,7 +17,7 @@ incorrect_first: False
 
 # Level of evaluation datail
 # Available options:
-    # Fast                      - only Correct/Incorrect #TODO: check if works with current code
+    # Fast                      - only Correct/Incorrect
     # Descriptive w/ bias check - assesses biases in answers
     # OpenAI grading prompt     - descriptive w/o bias check
     # Basic                     - Correctness + basic justification
