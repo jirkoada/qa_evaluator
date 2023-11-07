@@ -409,7 +409,8 @@ if __name__ == "__main__":
 
     # Save results
     if cfg.incorrect_first:
-        results = results.sort_values("answerScore")
+        results.index.name = "idx"
+        results = results.sort_values(by = ["answerScore", "idx"])
 
     results[score_str] = ""
     results[f"Parameters: {str(config)}"] = ""
